@@ -1,0 +1,67 @@
+{
+  "name": "todo-app",
+  "version": "1.0.0",
+  "description": "A robust todo app with mongodb and mongoose, cache with redis",
+  "main": "server.js",
+  "scripts": {
+    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node  ./src/server.js",
+    "lint": "eslint src/  --fix",
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "babel ./src --out-dir ./build",
+    "build": "npm run clean && npm run build-babel",
+    "start": "npm run build && node ./build/server.js",
+    "test": " cross-env NODE_ENV=test nyc --reporter=text --reporter=html mocha --require @babel/register src/test/index.js --timeout 10000 --recursive --exit || true",
+    "coverage": "nyc npm run test && nyc report --reporter=text-lcov | coveralls"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AbonyiXavier/Todo-App.git"
+  },
+  "author": "AbonyiXavier",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AbonyiXavier/Todo-App/issues"
+  },
+  "homepage": "https://github.com/AbonyiXavier/Todo-App#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cookie-parser": "^1.4.5",
+    "cookie-session": "^1.4.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "http-errors": "^1.8.0",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.10.11",
+    "morgan": "^1.10.0",
+    "passport": "^0.4.1",
+    "passport-google-oauth20": "^2.0.0",
+    "swagger-jsdoc": "^5.0.0",
+    "swagger-ui-express": "^4.1.4"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.11.5",
+    "@babel/core": "^7.11.5",
+    "@babel/node": "^7.10.5",
+    "@babel/plugin-transform-runtime": "^7.11.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/register": "^7.11.5",
+    "@babel/runtime": "^7.11.2",
+    "babel-eslint": "^10.1.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "coveralls": "^3.1.0",
+    "cross-env": "^7.0.2",
+    "eslint": "^7.12.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jsdoc": "^30.7.3",
+    "mocha": "^8.1.3",
+    "mocha-lcov-reporter": "^1.3.0",
+    "nodemon": "^2.0.4",
+    "nyc": "^15.1.0",
+    "sequelize-test-helpers": "^1.2.3",
+    "sinon": "^9.0.3",
+    "sinon-chai": "^3.5.0"
+  }
+}
