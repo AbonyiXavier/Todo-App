@@ -27,20 +27,14 @@
     "import/no-dynamic-require": "off",
     "no-console": "off",
     "import/no-extraneous-dependencies": ["error", { "devDependencies": true }],
+    "newline-per-chained-call": "off",
+    "nonblock-statement-body-position": "off",
+    "dot-notation": 0,
+    "operator-linebreak": 0,
     // "arrow-parens": [2, "as-needed"],
     "no-useless-catch": "off",
     "no-use-before-define": ["error", { "functions": false, "classes": false }],
-    "require-jsdoc": [
-      "error",
-      {
-        "require": {
-          "FunctionDeclaration": true,
-          "MethodDefinition": true,
-          "ClassDeclaration": true,
-          "FunctionExpression": true
-        }
-      }
-    ],
+    "require-jsdoc": 0,
     "valid-jsdoc": "error"
   }
 }

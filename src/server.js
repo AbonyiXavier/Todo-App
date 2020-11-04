@@ -7,6 +7,7 @@ import passport from "passport";
 import cookieSession from "cookie-session";
 import createError from "http-errors";
 import dotenv from "dotenv";
+import router from "./routes/index";
 
 require("./helpers/database/db");
 
@@ -20,20 +21,22 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.get("/", (req, res) => {
-  res.status(200).json({
+app.use("/api", router);
+
+app.get("/", (request, response) => {
+  response.status(200).json({
     status: true,
     message: "Todo App API",
   });
 });
 
-app.use((req, res, next) => {
+app.use((request, response, next) => {
   next(createError.NotFound());
 });
 
-app.use((err, req, res, next) => {
-  res.status(err.status || 500);
-  res.send({
+app.use((err, request, response, next) => {
+  response.status(err.status || 500);
+  response.send({
     error: {
       status: err.status || 500,
       message: err.message,
