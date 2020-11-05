@@ -1,4 +1,29 @@
 GET http://localhost:4002/
-
+Authorization:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InZlcmlmaWVkIjpmYWxzZSwiX2lkIjoiNWZhMmQwZmM5YTIwYmUxNmUwODhhOThiIiwibmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3QyQG1haWwuaW8iLCJwYXNzd29yZCI6IiQyYSQxMCRTak9aUEtLOG01WFdNSVk4emdNVnB1a1hvRGtBdHluVGouejB2VnRNWFRXNXJ6ZVhpUVh5YSIsImNyZWF0ZWRBdCI6IjIwMjAtMTEtMDRUMTY6MDQ6MTIuOTYzWiIsInVwZGF0ZWRBdCI6IjIwMjAtMTEtMDRUMTY6MDQ6MTIuOTYzWiIsIl9fdiI6MH0sImlhdCI6MTYwNDUxNTA0OCwiZXhwIjoxNjA0NjAxNDQ4fQ.403TUrRWL4L03IaVXOjWg0B_0Z3R9wFBv4Ez1u9Ndk4
 ###
 GET http://localhost:4002/abc-xyz
+
+###
+POST http://localhost:4002/api/v1/register
+Content-Type: application/json
+
+# {
+#     "name": "test",
+#     "email": "test4@mail.io",
+#     "password": "12354433"
+# }
+###
+POST http://localhost:4002/api/v1/login
+Content-Type: application/json
+
+# {
+#     "email": "test3@mail.io",
+#     "password": "12354433"
+# }
+###
+POST http://localhost:4002/api/v1/refresh-token
+Content-Type: application/json
+
+{
+   "refreshedToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7InZlcmlmaWVkIjpmYWxzZSwiX2lkIjoiNWZhMmZkNjUyOTE1MzczOWE4Yjc3NDZmIiwibmFtZSI6InRlc3QiLCJlbWFpbCI6InRlc3QzQG1haWwuaW8iLCJwYXNzd29yZCI6IiQyYSQxMCRtM1o0QnZKOHEvRHEzNDBndjBNUXMubnp1WjBoVThqS2JUWUkuR3JFakx2WHFVd2U0UGhxSyIsImNyZWF0ZWRBdCI6IjIwMjAtMTEtMDRUMTk6MTM6NDEuNTk1WiIsInVwZGF0ZWRBdCI6IjIwMjAtMTEtMDRUMTk6MTM6NDEuNTk1WiIsIl9fdiI6MH0sImlhdCI6MTYwNDUxNzQxOCwiZXhwIjoxNjA1MTIyMjE4fQ.MmKg-Qv36GLSshP2R-9D9H_UM-xSzF4_X_GDW8GTtFo"
+}
