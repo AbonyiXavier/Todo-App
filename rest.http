@@ -7,19 +7,19 @@ GET http://localhost:4002/abc-xyz
 POST http://localhost:4002/api/v1/register
 Content-Type: application/json
 
-# {
-#     "name": "test",
-#     "email": "test4@mail.io",
-#     "password": "12354433"
-# }
+{
+    "name": "test",
+    "email": "test10@mail.io",
+    "password": "12354433"
+ }
 ###
 POST http://localhost:4002/api/v1/login
 Content-Type: application/json
 
-# {
-#     "email": "test3@mail.io",
-#     "password": "12354433"
-# }
+{
+    "email": "test3@mail.io",
+    "password": "12354433"
+ }
 ###
 POST http://localhost:4002/api/v1/refresh-token
 Content-Type: application/json

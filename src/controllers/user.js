@@ -59,6 +59,7 @@ export default class userController {
         throw createError.Unauthorized("Email/password not valid");
       }
     } catch (error) {
+      console.log(error);
       if (error.isJoi === true) {
         return next(createError.BadRequest("Invalid Email/password"));
       }

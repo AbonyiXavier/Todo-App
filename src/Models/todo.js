@@ -1,7 +1,13 @@
 import mongoose from "mongoose";
 
-const TodoSchema = mongoose.Schema(
+const { Schema } = mongoose;
+
+const TodoSchema = new Schema(
   {
+    userId: {
+      type: Schema.Types.ObjectId,
+      ref: "User",
+    },
     title: {
       type: String,
       required: true,
@@ -15,13 +21,12 @@ const TodoSchema = mongoose.Schema(
     },
     isDone: {
       type: Boolean,
-      required: true,
       default: false,
     },
   },
   { timestamps: true }
 );
 
-const Todo = mongoose.model("Todo", TodoSchema);
+export default mongoose.model("Todo", TodoSchema);
 
-export default Todo;
+// export default Todo;

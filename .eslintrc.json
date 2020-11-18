@@ -31,6 +31,8 @@
     "nonblock-statement-body-position": "off",
     "dot-notation": 0,
     "operator-linebreak": 0,
+    "no-underscore-dangle": 0,
+    "prefer-const": "off",
     // "arrow-parens": [2, "as-needed"],
     "no-useless-catch": "off",
     "no-use-before-define": ["error", { "functions": false, "classes": false }],

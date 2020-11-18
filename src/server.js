@@ -11,9 +11,12 @@ import router from "./routes/index";
 
 require("./helpers/database/db");
 
+global.__basedir = `${__dirname}/..`;
+
 dotenv.config();
 
 const app = express();
+// app.use("/uploads", express.static("uploads"));
 
 app.use(cors());
 app.use(logger("dev"));
@@ -44,7 +47,7 @@ app.use((err, request, response, next) => {
   });
 });
 
-const PORT = process.env.PORT || 4002;
+const PORT = process.env.PORT || 4003;
 
 app.listen(PORT, () => {
   console.log(`Server running at: http://localhost:${PORT}`);
