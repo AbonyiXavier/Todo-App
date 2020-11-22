@@ -57,7 +57,6 @@ export default class todoController {
         todos.push(todo);
       });
 
-     
       await Todo.insertMany(todos);
 
       return response.send({
