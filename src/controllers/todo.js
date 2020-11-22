@@ -57,8 +57,7 @@ export default class todoController {
         todos.push(todo);
       });
 
-      const titleExist = await Todo.findOne({ duplicate });
-      console.log("one", titleExist);
+     
       await Todo.insertMany(todos);
 
       return response.send({
